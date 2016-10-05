@@ -15,7 +15,7 @@ apply plugin: 'jacoco'
 version = '1.0'
 jar {
     manifest {
-        attributes 'Implementation-Title': 'CSV JSON', 
+        attributes 'Implementation-Title': 'Gamegogy', 
                    'Implementation-Version': version, 
                    'Main-Class': 'edu.jsu.mcis.Main'
     }

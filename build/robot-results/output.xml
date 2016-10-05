@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0 (Jython 2.7.0 on java1.8.0_60)" generated="20161005 12:30:25.569">
+<suite source="C:\Users\Connor\Desktop\Software 1\Leaderboard\src\test\acceptancetest" name="Acceptancetest" id="s1">
+<suite source="C:\Users\Connor\Desktop\Software 1\Leaderboard\src\test\acceptancetest\DataRetrieval.robot" name="DataRetrieval" id="s1-s1">
+<test name="Test Gamegogy Load Student Data" id="s1-s1-t1">
+<kw name="Start Gamegogy CLI With Arguments">
+<arguments>
+<arg>student</arg>
+<arg>111128</arg>
+</arguments>
+<msg level="FAIL" timestamp="20161005 12:30:26.918">No keyword with name 'Start Gamegogy CLI With Arguments' found.</msg>
+<status endtime="20161005 12:30:26.927" starttime="20161005 12:30:26.912" status="FAIL"></status>
+</kw>
+<status critical="yes" endtime="20161005 12:30:26.934" starttime="20161005 12:30:26.793" status="FAIL">No keyword with name 'Start Gamegogy CLI With Arguments' found.</status>
+</test>
+<test name="Test Gamegogy Load Course Data" id="s1-s1-t2">
+<kw name="Start Gamegogy CLI With Arguments">
+<arguments>
+<arg>course</arg>
+<arg>99018</arg>
+</arguments>
+<msg level="FAIL" timestamp="20161005 12:30:27.025">No keyword with name 'Start Gamegogy CLI With Arguments' found.</msg>
+<status endtime="20161005 12:30:27.028" starttime="20161005 12:30:27.010" status="FAIL"></status>
+</kw>
+<status critical="yes" endtime="20161005 12:30:27.033" starttime="20161005 12:30:26.958" status="FAIL">No keyword with name 'Start Gamegogy CLI With Arguments' found.</status>
+</test>
+<test name="Test Gamegogy With No Arguments" id="s1-s1-t3">
+<kw name="Start Gamegogy CLI With Arguments">
+<msg level="FAIL" timestamp="20161005 12:30:27.096">No keyword with name 'Start Gamegogy CLI With Arguments' found.</msg>
+<status endtime="20161005 12:30:27.101" starttime="20161005 12:30:27.093" status="FAIL"></status>
+</kw>
+<status critical="yes" endtime="20161005 12:30:27.111" starttime="20161005 12:30:27.047" status="FAIL">No keyword with name 'Start Gamegogy CLI With Arguments' found.</status>
+</test>
+<status endtime="20161005 12:30:27.167" starttime="20161005 12:30:26.627" status="FAIL"></status>
+</suite>
+<status endtime="20161005 12:30:27.253" starttime="20161005 12:30:25.619" status="FAIL"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3">Critical Tests</stat>
+<stat pass="0" fail="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="3" name="Acceptancetest" id="s1">Acceptancetest</stat>
+<stat pass="0" fail="3" name="DataRetrieval" id="s1-s1">Acceptancetest.DataRetrieval</stat>
+</suite>
+</statistics>
+<errors>
+<msg level="ERROR" timestamp="20161005 12:30:26.741">Error in file 'C:\Users\Connor\Desktop\Software 1\Leaderboard\src\test\acceptancetest\DataRetrieval.robot': Importing test library 'keywords.GamegogyKeywords' failed: ImportError: No module named keywords
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Connor\.gradle\caches\modules-2\files-2.1\org.robotframework\robotframework\3.0\379defe8be9c22457b721a2bd8cb045506fef3e3\Lib
+  C:\Users\Connor\.gradle\caches\modules-2\files-2.1\org.robotframework\robotframework\3.0\379defe8be9c22457b721a2bd8cb045506fef3e3\robotframework-3.0.jar\Lib
+  __classpath__
+  __pyclasspath__/
+CLASSPATH:
+  C:\Program Files\Gradle\gradle-3.0\lib\gradle-launcher-3.0.jar</msg>
+</errors>
+</robot>
