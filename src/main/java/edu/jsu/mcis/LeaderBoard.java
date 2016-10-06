@@ -17,18 +17,6 @@ public class LeaderBoard{
 		//csvStringStudents = getFile("src/test/resources/students.csv");
 		//csvStringCourses = getFile("src/test/resources/courses.csv");
 		
-		if(type.equals("Student")){
-			CSVReader reader = new CSVReader(new FileReader("src/test/resources/students.csv"));
-			String [] nextLine;
-			while ((nextLine = reader.readNext()) != null) {
-				int i = 0;
-				System.out.println(nextLine[1]);
-				i++;				
-			}
-		}
-		else if(type.equals("Course")){
-			
-		}
 	}
 	
 	private static String getFile(String dir) throws IOException{
