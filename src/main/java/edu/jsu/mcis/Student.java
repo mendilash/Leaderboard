@@ -5,16 +5,16 @@ import java.util.*;
 
 public class Student{
 	
-	private int id;
+	private String id;
 	private String firstName;
 	private String lastName;
 	private String email;
 	
-	public int getId(){
+	public String getStudentId(){
 		return id;
 	}
 	
-	public void setId(int id){
+	public void setStudentId(String id){
 		this.id = id;
 	}
 	
@@ -44,7 +44,7 @@ public class Student{
 	
 	@Override
 	public String toString(){
-		return "["+ getId() +"]" + getFirstName() + getLastName() + getEmail() + "@jsu.edu";
+		return "["+ getStudentId() +"]" + getFirstName() + getLastName() + getEmail() + "@jsu.edu";
 	}
 }
 

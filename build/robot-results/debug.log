@@ -1,33 +1,33 @@
 ==============================================================================
-20161005 12:30:26.583 - INFO - + START SUITE: Acceptancetest [ ]
+20161006 16:42:38.862 - INFO - + START SUITE: Acceptancetest [ ]
 ==============================================================================
-20161005 12:30:26.766 - INFO - +- START SUITE: Acceptancetest.DataRetrieval [ ]
+20161006 16:42:38.893 - INFO - +- START SUITE: Acceptancetest.DataRetrieval [ ]
 ==============================================================================
-20161005 12:30:26.796 - INFO - +-- START TEST: Test Gamegogy Load Student Data [ ]
+20161006 16:42:38.897 - INFO - +-- START TEST: Test Gamegogy Load Student Data [ ]
 ------------------------------------------------------------------------------
-20161005 12:30:26.913 - INFO - +--- START KW: Start Gamegogy CLI With Arguments [ student | 111128 ]
-20161005 12:30:26.918 - FAIL - No keyword with name 'Start Gamegogy CLI With Arguments' found.
-20161005 12:30:26.930 - INFO - +--- END KW: Start Gamegogy CLI With Arguments (15)
+20161006 16:42:38.905 - INFO - +--- START KW: Start Gamegogy CLI With Arguments [ student | 111128 ]
+20161006 16:42:38.907 - FAIL - No keyword with name 'Start Gamegogy CLI With Arguments' found.
+20161006 16:42:38.909 - INFO - +--- END KW: Start Gamegogy CLI With Arguments (3)
 ------------------------------------------------------------------------------
-20161005 12:30:26.955 - INFO - +-- END TEST: Test Gamegogy Load Student Data (141)
+20161006 16:42:38.912 - INFO - +-- END TEST: Test Gamegogy Load Student Data (14)
 ------------------------------------------------------------------------------
-20161005 12:30:26.960 - INFO - +-- START TEST: Test Gamegogy Load Course Data [ ]
+20161006 16:42:38.914 - INFO - +-- START TEST: Test Gamegogy Load Course Data [ ]
 ------------------------------------------------------------------------------
-20161005 12:30:27.017 - INFO - +--- START KW: Start Gamegogy CLI With Arguments [ course | 99018 ]
-20161005 12:30:27.025 - FAIL - No keyword with name 'Start Gamegogy CLI With Arguments' found.
-20161005 12:30:27.031 - INFO - +--- END KW: Start Gamegogy CLI With Arguments (18)
+20161006 16:42:38.925 - INFO - +--- START KW: Start Gamegogy CLI With Arguments [ course | 99018 ]
+20161006 16:42:38.928 - FAIL - No keyword with name 'Start Gamegogy CLI With Arguments' found.
+20161006 16:42:38.930 - INFO - +--- END KW: Start Gamegogy CLI With Arguments (4)
 ------------------------------------------------------------------------------
-20161005 12:30:27.045 - INFO - +-- END TEST: Test Gamegogy Load Course Data (75)
+20161006 16:42:38.932 - INFO - +-- END TEST: Test Gamegogy Load Course Data (17)
 ------------------------------------------------------------------------------
-20161005 12:30:27.049 - INFO - +-- START TEST: Test Gamegogy With No Arguments [ ]
+20161006 16:42:38.934 - INFO - +-- START TEST: Test Gamegogy With No Arguments [ ]
 ------------------------------------------------------------------------------
-20161005 12:30:27.094 - INFO - +--- START KW: Start Gamegogy CLI With Arguments [ ]
-20161005 12:30:27.096 - FAIL - No keyword with name 'Start Gamegogy CLI With Arguments' found.
-20161005 12:30:27.103 - INFO - +--- END KW: Start Gamegogy CLI With Arguments (8)
+20161006 16:42:38.944 - INFO - +--- START KW: Start Gamegogy CLI With Arguments [ ]
+20161006 16:42:38.944 - FAIL - No keyword with name 'Start Gamegogy CLI With Arguments' found.
+20161006 16:42:38.946 - INFO - +--- END KW: Start Gamegogy CLI With Arguments (1)
 ------------------------------------------------------------------------------
-20161005 12:30:27.132 - INFO - +-- END TEST: Test Gamegogy With No Arguments (64)
+20161006 16:42:38.948 - INFO - +-- END TEST: Test Gamegogy With No Arguments (13)
 ------------------------------------------------------------------------------
-20161005 12:30:27.236 - INFO - +- END SUITE: Acceptancetest.DataRetrieval (540)
+20161006 16:42:38.954 - INFO - +- END SUITE: Acceptancetest.DataRetrieval (84)
 ==============================================================================
-20161005 12:30:27.289 - INFO - + END SUITE: Acceptancetest (1634)
+20161006 16:42:38.961 - INFO - + END SUITE: Acceptancetest (252)
 ==============================================================================

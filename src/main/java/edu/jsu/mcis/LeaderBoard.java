@@ -9,30 +9,21 @@ import au.com.bytecode.opencsv.*;
 
 public class LeaderBoard{
 	
-	private String csvStringStudents;
-	private String csvStringCourses;
+	DataSource ds = new DataSource();
 	
-	public LeaderBoard(String type,int id) throws IOException{
+	public List findByTypeAndId(String type, String id) throws IOException{
+		List<Student> s = new ArrayList<Student>();
+		List<Course> c = new ArrayList<Course>();
 		
-		//csvStringStudents = getFile("src/test/resources/students.csv");
-		//csvStringCourses = getFile("src/test/resources/courses.csv");
-		
-	}
+		if(type.equals("student")){
+			s = ds.getStudent();
+			return s;
+		}
+		else if(type.equals("course")){
+			c = ds.getCourse();
+			return c;
+		}
+		return null;
+	}	
 	
-	private static String getFile(String dir) throws IOException{
-        File inFile = new File(dir);
-        Scanner scanner = new Scanner(inFile);
-        String newLine = System.getProperty("line.separator");
-        String out = "";
-        
-        try{
-            while(scanner.hasNextLine()){
-                out += scanner.nextLine() + newLine;
-            }
-            return out;
-        }
-        finally{
-            scanner.close();
-        }
-    }	
 }

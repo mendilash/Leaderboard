@@ -6,38 +6,76 @@ import java.util.*;
 
 public class DataSource{
 	
-	public static void main(String[] args) throws IOException {
-		// open file input stream
-		BufferedReader reader = new BufferedReader(new FileReader("courses.csv"));
-
-	String line = null;
-	Scanner scanner = null;
-	int index = 0;
-	List<Course> cList = new ArrayList<>();
+	List<Student> sList;
+	List<Course> cList;
+	String line;
+	Scanner scanner;
+	int index;
 	
-		while ((line = reader.readLine()) != null) {
+	public DataSource(){
+		sList = new ArrayList<>();
+		cList = new ArrayList<>();
+		line = null;
+		scanner = null;
+		index = 0;
+	}
+	
+	public List getStudent() throws IOException{
+		BufferedReader studentReader = new BufferedReader(new FileReader("src/test/resources/students.csv"));
+		
+		while ((line = studentReader.readLine()) != null) {
+			Student s = new Student();
+			scanner = new Scanner(line);
+			scanner.useDelimiter(",");
+			while (scanner.hasNext()) {
+				String data2 = scanner.next();
+				if (index == 0)
+					s.setStudentId(data2);
+				else if (index == 1)
+					s.setFirstName(data2);
+				else if (index == 2)
+					s.setLastName(data2);
+				else if (index == 3)
+					s.setEmail(data2);
+				else
+					System.out.println("invalid data::" + data2);
+				index++;
+			}
+			index = 0;
+			sList.add(s);
+		}
+		studentReader.close();
+		
+		return sList;
+	}
+	
+	public List getCourse() throws IOException{
+		BufferedReader courseReader = new BufferedReader(new FileReader("src/test/resources/courses.csv"));	
+	
+		while ((line = courseReader.readLine()) != null) {
 			Course c = new Course();
 			scanner = new Scanner(line);
 			scanner.useDelimiter(",");
 			while (scanner.hasNext()) {
-				String data = scanner.next();
+				String data1 = scanner.next();
 				if (index == 0)
-					c.setId(Integer.parseInt(data));
+					c.setCourseId(data1);
 				else if (index == 1)
-					c.setSemester(data);
+					c.setSemester(data1);
 				else if (index == 2)
-					c.setYear(data);
+					c.setYear(data1);
 				else if (index == 3)
-					c.setNumStudents(data);
+					c.setNumStudents(data1);
 				else
-					System.out.println("invalid data::" + data);
+					System.out.println("invalid data::" + data1);
 				index++;
 			}
 			index = 0;
 			cList.add(c);
 		}
-		reader.close();
+		courseReader.close();
 		
-		System.out.println(cList);
-	}	
+		return cList;
+	}
+
 }

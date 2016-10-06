@@ -8,12 +8,20 @@ import java.util.*;
 
 public class LeaderBoardTest {
 
+
 	@Test
 	public void testGetStudent() throws IOException{
-		//LeaderBoard lb = new LeaderBoard("Student", 111111);
-		Student s = new Student();
-		assertEquals("[111111] Jerrod Shields jshields@jsu.edu", s.toString());
+		//DataSource ds = new DataSource();
+		LeaderBoard lb = new LeaderBoard();
+		Object obj = lb.findByTypeAndId("student", "111111");
+		
+		assertEquals("[111111] Jerrod Shields jshields@jsu.edu", lb.toString());
 	}
+	
+	/*@Test
+	public void studentListHasItems(){
+		List<Student> student = new ArrayList<>();
+	}*/
 }
 
 

@@ -6,16 +6,16 @@ import java.util.*;
 
 public class Course{
 	
-	private int id;
+	private String id;
 	private String semester;
 	private String year;
 	private String numstudents;
 	
-	public int getId(){
+	public String getCourseId(){
 		return id;
 	}
 	
-	public void setId(int id){
+	public void setCourseId(String id){
 		this.id = id;
 	}
 	
@@ -45,6 +45,6 @@ public class Course{
 	
 	@Override
 	public String toString(){
-		return "["+ getId() +"]" + getSemester() + getYear() +"(" +getNumStudents()+" students)";
+		return "["+ getCourseId() +"]" + getSemester() + getYear() +"(" +getNumStudents()+" students)";
 	}
 }
