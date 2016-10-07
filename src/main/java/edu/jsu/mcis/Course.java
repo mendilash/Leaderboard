@@ -3,13 +3,26 @@ package edu.jsu.mcis;
 import java.io.*;
 import java.util.*;
 
-
 public class Course{
 	
 	private String id;
 	private String semester;
 	private String year;
 	private String numstudents;
+	
+	public Course(){
+		id = "";
+		semester = "";
+		year = "";
+		numstudents = "";
+	}
+	
+	public Course(String id){
+		this.id = id;
+		semester = "";
+		year = "";
+		numstudents = "";
+	}
 	
 	public String getCourseId(){
 		return id;

@@ -10,6 +10,20 @@ public class Student{
 	private String lastName;
 	private String email;
 	
+	public Student(){
+		id = "";
+		firstName = "";
+		lastName= "";
+		email = "";
+	}
+	
+	public Student(String id){
+		this.id = id;
+		firstName = "";
+		lastName= "";
+		email = "";
+	}
+	
 	public String getStudentId(){
 		return id;
 	}

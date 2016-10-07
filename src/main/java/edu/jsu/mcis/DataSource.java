@@ -20,11 +20,11 @@ public class DataSource{
 		index = 0;
 	}
 	
-	public List getStudent() throws IOException{
+	public List getStudent(String id) throws IOException{
 		BufferedReader studentReader = new BufferedReader(new FileReader("src/test/resources/students.csv"));
 		
 		while ((line = studentReader.readLine()) != null) {
-			Student s = new Student();
+			Student s = new Student(id);
 			scanner = new Scanner(line);
 			scanner.useDelimiter(",");
 			while (scanner.hasNext()) {
@@ -49,7 +49,7 @@ public class DataSource{
 		return sList;
 	}
 	
-	public List getCourse() throws IOException{
+	public List getCourse(String id) throws IOException{
 		BufferedReader courseReader = new BufferedReader(new FileReader("src/test/resources/courses.csv"));	
 	
 		while ((line = courseReader.readLine()) != null) {
@@ -71,7 +71,8 @@ public class DataSource{
 				index++;
 			}
 			index = 0;
-			cList.add(c);
+			//cList.add(c);
+			String courseString = 
 		}
 		courseReader.close();
 		

@@ -10,20 +10,24 @@ import au.com.bytecode.opencsv.*;
 public class LeaderBoard{
 	
 	DataSource ds = new DataSource();
+	List<Student> s;
+	List<Course> c ;
+	
+	public LeaderBoard(){
+		s = new ArrayList<>();
+		c = new ArrayList<>();
+	}
 	
 	public List findByTypeAndId(String type, String id) throws IOException{
-		List<Student> s = new ArrayList<Student>();
-		List<Course> c = new ArrayList<Course>();
 		
 		if(type.equals("student")){
-			s = ds.getStudent();
+			s = ds.getStudent(id);
 			return s;
 		}
 		else if(type.equals("course")){
-			c = ds.getCourse();
+			c = ds.getCourse(id);
 			return c;
 		}
-		return null;
+		else {	return null;	}
 	}	
-	
 }
