@@ -71,8 +71,7 @@ public class DataSource{
 				index++;
 			}
 			index = 0;
-			//cList.add(c);
-			String courseString = 
+			cList.add(c);
 		}
 		courseReader.close();
 		

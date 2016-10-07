@@ -15,7 +15,7 @@ public class LeaderBoardTest {
 		List studentList = new ArrayList<>();
 		studentList = lb.findByTypeAndId("student", "111111");
 		
-		assertEquals("[111111] Jerrod Shields jshields@jsu.edu", studentList.toString());
+		assertEquals("111111] Jerrod Shields jshields@jsu.edu", studentList.toString());
 	}
 	
 	@Test
