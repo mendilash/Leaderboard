@@ -22,9 +22,9 @@ public class DataSource{
 	
 	public List getStudent(String id) throws IOException{
 		BufferedReader studentReader = new BufferedReader(new FileReader("src/test/resources/students.csv"));
+		Student s = new Student(id);
 		
 		while ((line = studentReader.readLine()) != null) {
-			Student s = new Student(id);
 			scanner = new Scanner(line);
 			scanner.useDelimiter(",");
 			while (scanner.hasNext()) {
@@ -51,9 +51,9 @@ public class DataSource{
 	
 	public List getCourse(String id) throws IOException{
 		BufferedReader courseReader = new BufferedReader(new FileReader("src/test/resources/courses.csv"));	
+		Course c = new Course(id);
 	
 		while ((line = courseReader.readLine()) != null) {
-			Course c = new Course();
 			scanner = new Scanner(line);
 			scanner.useDelimiter(",");
 			while (scanner.hasNext()) {
