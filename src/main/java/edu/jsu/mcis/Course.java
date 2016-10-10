@@ -58,6 +58,6 @@ public class Course{
 	
 	@Override
 	public String toString(){
-		return "["+ getCourseId() +"]" + getSemester() + getYear() +"(" +getNumStudents()+" students)";
+		return "["+ getCourseId() +"] "  + getSemester() + " " + getYear() +" (" +getNumStudents()+" students)";
 	}
 }

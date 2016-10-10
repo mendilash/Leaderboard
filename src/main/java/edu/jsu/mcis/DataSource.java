@@ -11,6 +11,8 @@ public class DataSource{
 	String line;
 	Scanner scanner;
 	int index;
+	Student student;
+	Course course;
 	
 	public DataSource(){
 		sList = new ArrayList<>();
@@ -18,11 +20,31 @@ public class DataSource{
 		line = null;
 		scanner = null;
 		index = 0;
+		student = new Student();
+		course = new Course();
 	}
 	
-	public List getStudent(String id) throws IOException{
+	public Student getStudent(String studentId){
+		for(int i = 0; i < sList.size(); i++){
+			if(studentId == sList.get(i).getStudentId()){
+				student =  sList.get(i);
+			}
+		}
+		return student;
+	}
+	
+	public Course getCourse(String courseId){
+		for(int i = 0; i < cList.size(); i++){
+			if(courseId == cList.get(i).getCourseId()){
+				course = cList.get(i);
+			}
+		}
+		return course;
+	}
+	
+	private void parseStudent() throws IOException{
 		BufferedReader studentReader = new BufferedReader(new FileReader("src/test/resources/students.csv"));
-		Student s = new Student(id);
+		Student s = new Student();
 		
 		while ((line = studentReader.readLine()) != null) {
 			scanner = new Scanner(line);
@@ -45,13 +67,11 @@ public class DataSource{
 			sList.add(s);
 		}
 		studentReader.close();
-		
-		return sList;
 	}
 	
-	public List getCourse(String id) throws IOException{
+	private void parseCourse() throws IOException{
 		BufferedReader courseReader = new BufferedReader(new FileReader("src/test/resources/courses.csv"));	
-		Course c = new Course(id);
+		Course c = new Course();
 	
 		while ((line = courseReader.readLine()) != null) {
 			scanner = new Scanner(line);
@@ -74,8 +94,6 @@ public class DataSource{
 			cList.add(c);
 		}
 		courseReader.close();
-		
-		return cList;
 	}
 
 }

@@ -58,7 +58,7 @@ public class Student{
 	
 	@Override
 	public String toString(){
-		return "["+ getStudentId() +"]" + getFirstName() + getLastName() + getEmail() + "@jsu.edu";
+		return "["+ getStudentId() +"] " + getFirstName() + " " + getLastName() + " " + getEmail() + "@jsu.edu";
 	}
 }
 

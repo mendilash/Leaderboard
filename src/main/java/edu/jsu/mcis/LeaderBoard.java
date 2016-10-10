@@ -10,15 +10,15 @@ import au.com.bytecode.opencsv.*;
 public class LeaderBoard{
 	
 	DataSource ds = new DataSource();
-	List<Student> s;
-	List<Course> c ;
+	Student s;
+	Course c;
 	
 	public LeaderBoard(){
-		s = new ArrayList<>();
-		c = new ArrayList<>();
+		s = new Student();
+		c = new Course();
 	}
 	
-	public List findByTypeAndId(String type, String id) throws IOException{
+	public Object findByTypeAndId(String type, String id) throws IOException{
 		
 		if(type.equals("student")){
 			s = ds.getStudent(id);
