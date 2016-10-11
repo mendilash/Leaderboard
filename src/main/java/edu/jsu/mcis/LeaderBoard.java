@@ -10,23 +10,23 @@ import au.com.bytecode.opencsv.*;
 public class LeaderBoard{
 	
 	DataSource ds = new DataSource();
-	Student s;
-	Course c;
+	Student student;
+	Course course;
 	
 	public LeaderBoard(){
-		s = new Student();
-		c = new Course();
+		student = new Student();
+		course = new Course();
 	}
 	
 	public Object findByTypeAndId(String type, String id) throws IOException{
 		
 		if(type.equals("student")){
-			s = ds.getStudent(id);
-			return s;
+			student = ds.getStudent(id);
+			return student;
 		}
 		else if(type.equals("course")){
-			c = ds.getCourse(id);
-			return c;
+			course = ds.getCourse(id);
+			return course;
 		}
 		else {	return null;	}
 	}	

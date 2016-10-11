@@ -26,16 +26,17 @@ public class DataSource{
 	
 	public Student getStudent(String studentId){
 		for(int i = 0; i < sList.size(); i++){
-			if(studentId == sList.get(i).getStudentId()){
+			if(studentId.equals(sList.get(i).getStudentId())){
 				student =  sList.get(i);
 			}
 		}
+		System.out.println(student);
 		return student;
 	}
 	
 	public Course getCourse(String courseId){
 		for(int i = 0; i < cList.size(); i++){
-			if(courseId == cList.get(i).getCourseId()){
+			if(courseId.equals(cList.get(i).getCourseId())){
 				course = cList.get(i);
 			}
 		}
@@ -95,5 +96,4 @@ public class DataSource{
 		}
 		courseReader.close();
 	}
-
 }
