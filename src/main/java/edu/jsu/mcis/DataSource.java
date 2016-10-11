@@ -6,68 +6,50 @@ import java.util.*;
 
 public class DataSource{
 	
-	List<Student> sList;
-	List<Course> cList;
+	ArrayList<Student> sList;
+	ArrayList<Course> cList;
 	String line;
 	Scanner scanner;
 	int index;
 	Student student;
 	Course course;
 	
-	public DataSource(){
+	public DataSource() throws IOException{
 		sList = new ArrayList<>();
 		cList = new ArrayList<>();
 		line = null;
 		scanner = null;
 		index = 0;
-		student = new Student();
-		course = new Course();
+		parseCourse();
+		parseStudent();
+	}
+	
+	public ArrayList getStudentList(){
+		return sList;
+	}
+	
+	public ArrayList getCourseList(){
+		return cList;
 	}
 	
 	public Student getStudent(String studentId){
-		for(int i = 0; i < sList.size(); i++){
+		student = new Student(studentId);
+		for(int i = 0; i < sList.size()-1; i++){
 			if(studentId.equals(sList.get(i).getStudentId())){
 				student =  sList.get(i);
 			}
 		}
-		System.out.println(student);
 		return student;
 	}
 	
-	public Course getCourse(String courseId){
-		for(int i = 0; i < cList.size(); i++){
+	public Course getCourse(String courseId){		
+		course = new Course(courseId);
+		for(int i = 0; i < cList.size()-1; i++){
 			if(courseId.equals(cList.get(i).getCourseId())){
 				course = cList.get(i);
 			}
 		}
 		return course;
-	}
-	
-	private void parseStudent() throws IOException{
-		BufferedReader studentReader = new BufferedReader(new FileReader("src/test/resources/students.csv"));
-		Student s = new Student();
-		
-		while ((line = studentReader.readLine()) != null) {
-			scanner = new Scanner(line);
-			scanner.useDelimiter(",");
-			while (scanner.hasNext()) {
-				String data2 = scanner.next();
-				if (index == 0)
-					s.setStudentId(data2);
-				else if (index == 1)
-					s.setFirstName(data2);
-				else if (index == 2)
-					s.setLastName(data2);
-				else if (index == 3)
-					s.setEmail(data2);
-				else
-					System.out.println("invalid data::" + data2);
-				index++;
-			}
-			index = 0;
-			sList.add(s);
-		}
-		studentReader.close();
 	}
 	
 	private void parseCourse() throws IOException{
@@ -77,23 +59,54 @@ public class DataSource{
 		while ((line = courseReader.readLine()) != null) {
 			scanner = new Scanner(line);
 			scanner.useDelimiter(",");
-			while (scanner.hasNext()) {
+			while (scanner.hasNext() && index < 4) {
 				String data1 = scanner.next();
-				if (index == 0)
+				if (index == 0){
 					c.setCourseId(data1);
-				else if (index == 1)
+				}
+				else if (index == 1){
 					c.setSemester(data1);
-				else if (index == 2)
+				}
+				else if (index == 2){
 					c.setYear(data1);
-				else if (index == 3)
+				}
+				else if (index == 3){
 					c.setNumStudents(data1);
-				else
-					System.out.println("invalid data::" + data1);
+				}
 				index++;
 			}
 			index = 0;
 			cList.add(c);
 		}
 		courseReader.close();
+	}
+	
+	private void parseStudent() throws IOException{
+		BufferedReader studentReader = new BufferedReader(new FileReader("src/test/resources/students.csv"));
+		Student s = new Student();
+		
+		while ((line = studentReader.readLine()) != null) {
+			scanner = new Scanner(line);
+			scanner.useDelimiter(",");
+			while (scanner.hasNext() && index < 4) {
+				String data2 = scanner.next();
+				if (index == 0){
+					s.setStudentId(data2);
+				}
+				else if (index == 1){
+					s.setFirstName(data2);
+				}
+				else if (index == 2){
+					s.setLastName(data2);
+				}
+				else if (index == 3){
+					s.setEmail(data2);
+				}
+				index++;
+			}
+			index = 0;
+			sList.add(s);
+		}
+		studentReader.close();
 	}
 }

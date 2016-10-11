@@ -9,16 +9,22 @@ import au.com.bytecode.opencsv.*;
 
 public class LeaderBoard{
 	
-	DataSource ds = new DataSource();
+	DataSource ds;
 	Student student;
 	Course course;
 	
-	public LeaderBoard(){
-		student = new Student();
-		course = new Course();
+	public LeaderBoard()throws IOException{
+		ds = new DataSource();
 	}
 	
-	public Object findByTypeAndId(String type, String id) throws IOException{
+	public LeaderBoard(String type, String id)throws IOException{
+		ds = new DataSource();
+	}
+	
+	/*public Object findByTypeAndId(String type, String id) throws IOException{
+		
+		student = new Student(id);
+		course = new Course(id);
 		
 		if(type.equals("student")){
 			student = ds.getStudent(id);
@@ -29,5 +35,19 @@ public class LeaderBoard{
 			return course;
 		}
 		else {	return null;	}
-	}	
+	}*/
+	
+	public String findStudentById(String id){
+		student = new Student(id);		
+		student = ds.getStudent(id);
+		
+		return student.toString();
+	}
+	
+	public Course findCourseById(String id){
+		course = new Course(id);
+		course = ds.getCourse(id);
+		
+		return course;
+	}
 }

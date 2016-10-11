@@ -17,8 +17,8 @@ public class Student{
 		email = "";
 	}
 	
-	public Student(String id){
-		this.id = id;
+	public Student(String studentId){
+		this.id = studentId;
 		firstName = "";
 		lastName= "";
 		email = "";
@@ -28,32 +28,32 @@ public class Student{
 		return id;
 	}
 	
-	public void setStudentId(String id){
-		this.id = id;
+	public void setStudentId(String studentId){
+		this.id = studentId;
 	}
 	
 	public String getFirstName() {
 		return firstName;
 	}
 	
-	public void setFirstName(String firstName){
-		this.firstName = firstName;
+	public void setFirstName(String fName){
+		this.firstName = fName;
 	}
 	
 	public String getLastName(){
 		return lastName;
 	}
 	
-	public void setLastName(String lastName){
-		this.lastName = lastName;
+	public void setLastName(String lName){
+		this.lastName = lName;
 	}
 	
 	public String getEmail(){
 		return email;
 	}
 	
-	public void setEmail(String email){
-		this.email = email;
+	public void setEmail(String mail){
+		this.email = mail;
 	}
 	
 	@Override

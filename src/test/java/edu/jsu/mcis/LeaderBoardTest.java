@@ -8,20 +8,17 @@ import java.util.*;
 
 public class LeaderBoardTest {
 
-
-	/*@Test
-	public void testGetStudent() throws IOException{
-		LeaderBoard lb = new LeaderBoard();
-		List<Student> student = lb.findByTypeAndId("Student", "111111");
-		assertEquals("[111111] Jerrod Shields jshields@jsu.edu", student);
+	//@Test
+	public void testFindStudentById()throws IOException{
+		LeaderBoard lb = new LeaderBoard("Student", "111111");
+		assertEquals("[111111] Jerrod Shields jshields@jsu.edu", lb.findStudentById("111111"));
 	}
 	
-	@Test
-	public void testGetCourse() throws IOException{
-		LeaderBoard lb = new LeaderBoard();
-		List<Course> course = lb.findByTypeAndId("Course", "99000");
-		assertEquals("[99000] Spring 2013 (11 students)", course);
-	}*/
+	//@Test
+	public void testFindByTypeAsCourse(){
+		assertTrue(false);
+	}
+
 }
 
 
