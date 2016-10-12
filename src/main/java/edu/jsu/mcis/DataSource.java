@@ -1,6 +1,5 @@
 package edu.jsu.mcis;
 
-
 import java.io.*;
 import java.util.*;
 
@@ -36,7 +35,7 @@ public class DataSource{
 		student = new Student(studentId);
 		for(int i = 0; i < sList.size()-1; i++){
 			if(studentId.equals(sList.get(i).getStudentId())){
-				student =  sList.get(i);
+				student = sList.get(i);
 			}
 		}
 		return student;
@@ -55,12 +54,13 @@ public class DataSource{
 	private void parseCourse() throws IOException{
 		BufferedReader courseReader = new BufferedReader(new FileReader("src/test/resources/courses.csv"));	
 		Course c = new Course();
-	
+		
 		while ((line = courseReader.readLine()) != null) {
 			scanner = new Scanner(line);
 			scanner.useDelimiter(",");
 			while (scanner.hasNext() && index < 4) {
 				String data1 = scanner.next();
+				data1 = data1.replaceAll("\"", "");
 				if (index == 0){
 					c.setCourseId(data1);
 				}
@@ -90,6 +90,7 @@ public class DataSource{
 			scanner.useDelimiter(",");
 			while (scanner.hasNext() && index < 4) {
 				String data2 = scanner.next();
+				data2 = data2.replaceAll("\"", "");
 				if (index == 0){
 					s.setStudentId(data2);
 				}

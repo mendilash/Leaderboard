@@ -71,7 +71,7 @@ public class DataSourceTest{
 	}
 	
 	@Test
-	public void testGetCourseNumStudents()throws IOException{
+	public void testGetCourseNumberOfStudents()throws IOException{
 		Course course = ds.getCourse("99000");
 		assertEquals("11", course.getSemester());
 	}
