@@ -17,7 +17,7 @@ jar {
     manifest {
         attributes 'Implementation-Title': 'Gamegogy', 
                    'Implementation-Version': version, 
-                   'Main-Class': 'edu.jsu.mcis.Main'
+                   'Main-Class': 'edu.jsu.mcis.LeaderBoard'
     }
 }
 

@@ -49,6 +49,6 @@ public class LeaderBoard{
 	
 	public static void main(String[] args)throws IOException{
 		LeaderBoard lb = new LeaderBoard(args[0], args[1]);
-		lb.getOutput();
+		System.out.println(lb.getOutput());
 	}
 }
