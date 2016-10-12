@@ -12,6 +12,7 @@ public class LeaderBoard{
 	DataSource ds;
 	Student student;
 	Course course;
+	String output;
 	
 	public LeaderBoard()throws IOException{
 		ds = new DataSource();
@@ -19,23 +20,18 @@ public class LeaderBoard{
 	
 	public LeaderBoard(String type, String id)throws IOException{
 		ds = new DataSource();
+		output = "";
+		if(type.equals("student")){
+			output = findStudentById(id);
+		}
+		if(type.equals("course")){
+			output = findCourseById(id);
+		}
 	}
 	
-	/*public Object findByTypeAndId(String type, String id) throws IOException{
-		
-		student = new Student(id);
-		course = new Course(id);
-		
-		if(type.equals("student")){
-			student = ds.getStudent(id);
-			return student;
-		}
-		else if(type.equals("course")){
-			course = ds.getCourse(id);
-			return course;
-		}
-		else {	return null;	}
-	}*/
+	public String getOutput(){
+		return output;
+	}
 	
 	public String findStudentById(String id){
 		student = new Student(id);		
@@ -44,10 +40,15 @@ public class LeaderBoard{
 		return student.toString();
 	}
 	
-	public Course findCourseById(String id){
+	public String findCourseById(String id){
 		course = new Course(id);
 		course = ds.getCourse(id);
 		
-		return course;
+		return course.toString();
+	}
+	
+	public static void main(String[] args)throws IOException{
+		LeaderBoard lb = new LeaderBoard(args[0], args[1]);
+		lb.getOutput();
 	}
 }
