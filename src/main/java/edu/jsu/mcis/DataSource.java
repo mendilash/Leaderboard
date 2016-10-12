@@ -12,6 +12,7 @@ public class DataSource{
 	int index;
 	Student student;
 	Course course;
+
 	
 	public DataSource() throws IOException{
 		sList = new ArrayList<>();
@@ -53,12 +54,12 @@ public class DataSource{
 	
 	private void parseCourse() throws IOException{
 		BufferedReader courseReader = new BufferedReader(new FileReader("src/test/resources/courses.csv"));	
-		Course c = new Course();
 		
 		while ((line = courseReader.readLine()) != null) {
+			Course c = new Course();
 			scanner = new Scanner(line);
 			scanner.useDelimiter(",");
-			while (scanner.hasNext() && index < 4) {
+			while (scanner.hasNext()) {
 				String data1 = scanner.next();
 				data1 = data1.replaceAll("\"", "");
 				if (index == 0){
@@ -83,12 +84,12 @@ public class DataSource{
 	
 	private void parseStudent() throws IOException{
 		BufferedReader studentReader = new BufferedReader(new FileReader("src/test/resources/students.csv"));
-		Student s = new Student();
 		
 		while ((line = studentReader.readLine()) != null) {
+			Student s = new Student();
 			scanner = new Scanner(line);
 			scanner.useDelimiter(",");
-			while (scanner.hasNext() && index < 4) {
+			while (scanner.hasNext()) {
 				String data2 = scanner.next();
 				data2 = data2.replaceAll("\"", "");
 				if (index == 0){

@@ -17,8 +17,8 @@ public class Course{
 		numstudents = "";
 	}
 	
-	public Course(String id){
-		this.id = id;
+	public Course(String courseId){
+		this.id = courseId;
 		semester = "";
 		year = "";
 		numstudents = "";
@@ -28,32 +28,32 @@ public class Course{
 		return id;
 	}
 	
-	public void setCourseId(String id){
-		this.id = id;
+	public void setCourseId(String courseId){
+		this.id = courseId;
 	}
 	
 	public String getSemester() {
 		return semester;
 	}
 	
-	public void setSemester(String semester){
-		this.semester = semester;
+	public void setSemester(String incomingSemester){
+		this.semester = incomingSemester;
 	}
 	
 	public String getYear(){
 		return year;
 	}
 	
-	public void setYear(String year){
-		this.year = year;
+	public void setYear(String incomingYear){
+		this.year = incomingYear;
 	}
 	
 	public String getNumStudents(){
 		return numstudents;
 	}
 	
-	public void setNumStudents(String numstudents){
-		this.numstudents = numstudents;
+	public void setNumStudents(String incomingNumStudents){
+		this.numstudents = incomingNumStudents;
 	}
 	
 	@Override
