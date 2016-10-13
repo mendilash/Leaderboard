@@ -2,34 +2,32 @@ package edu.jsu.mcis;
 
 import org.junit.*;
 import static org.junit.Assert.*;
-
 import java.io.*;
 import java.util.*;
 
 public class DataSourceTest{
 	
-	private DataSource ds;
+	private DataSource dataSource;
 	private Student student;
 	private Course course;
 
-
 	@Before
 	public void setUp()throws IOException{
-		ds = new DataSource();
-		student = ds.getStudent("111111");
-		course = ds.getCourse("99000");
+		dataSource = new DataSource();
+		student = dataSource.getStudent("111111");
+		course = dataSource.getCourse("99000");
 	}
 	
 	@Test
 	public void testParseStudent(){
-		ArrayList sList = ds.getStudentList();
-		assertEquals(301, sList.size());
+		ArrayList studentList = dataSource.getStudentList();
+		assertEquals(300, studentList.size());
 	}
 	
 	@Test
 	public void testParseCourse(){
-		ArrayList cList = ds.getCourseList();
-		assertEquals(26, cList.size());
+		ArrayList courseList = dataSource.getCourseList();
+		assertEquals(25, courseList.size());
 	}
 	
 	@Test

@@ -1,25 +1,21 @@
 package edu.jsu.mcis;
 
-import org.junit.*;
-import static org.junit.Assert.*;
-
 import java.io.*;
 import java.util.*;
-import au.com.bytecode.opencsv.*;
 
 public class LeaderBoard{
 	
-	DataSource ds;
+	DataSource dataSource;
 	Student student;
 	Course course;
 	String output;
 	
 	public LeaderBoard()throws IOException{
-		ds = new DataSource();
+		
 	}
 	
 	public LeaderBoard(String type, String id)throws IOException{
-		ds = new DataSource();
+		dataSource = new DataSource();
 		output = "";
 		if(type.equals("student")){
 			output = findStudentById(id);
@@ -35,20 +31,20 @@ public class LeaderBoard{
 	
 	public String findStudentById(String id){
 		student = new Student(id);		
-		student = ds.getStudent(id);
+		student = dataSource.getStudent(id);
 		
 		return student.toString();
 	}
 	
 	public String findCourseById(String id){
 		course = new Course(id);
-		course = ds.getCourse(id);
+		course = dataSource.getCourse(id);
 		
 		return course.toString();
 	}
 	
 	public static void main(String[] args)throws IOException{
-		LeaderBoard lb = new LeaderBoard(args[0], args[1]);
-		System.out.println(lb.getOutput());
+		LeaderBoard leaderBoard = new LeaderBoard(args[0], args[1]);
+		System.out.println(leaderBoard.getOutput());
 	}
 }

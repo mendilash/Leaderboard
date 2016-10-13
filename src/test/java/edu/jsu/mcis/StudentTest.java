@@ -2,7 +2,6 @@ package edu.jsu.mcis;
 
 import org.junit.*;
 import static org.junit.Assert.*;
-
 import java.io.*;
 import java.util.*;
 
@@ -10,39 +9,39 @@ public class StudentTest{
 	
 	@Test
 	public void testGetStudentID(){
-		Student s = new Student("111111");
+		Student student = new Student("111111");
 		
-		assertEquals("111111", s.getStudentId());
+		assertEquals("111111", student.getStudentId());
 	}
 	
 	@Test
 	public void testGetFirstName(){
-		Student s = new Student();
-		s.setFirstName("Jerrod");
-		assertEquals("Jerrod", s.getFirstName());
+		Student student = new Student();
+		student.setFirstName("Jerrod");
+		assertEquals("Jerrod", student.getFirstName());
 	}
 	
 	@Test
 	public void testGetLastName(){
-		Student s = new Student();
-		s.setLastName("Shields");
-		assertEquals("Shields", s.getLastName());
+		Student student = new Student();
+		student.setLastName("Shields");
+		assertEquals("Shields", student.getLastName());
 	}
 	
 	@Test
 	public void testGetEmail(){
-		Student s = new Student();
-		s.setEmail("jshields");
-		assertEquals("jshields", s.getEmail());
+		Student student = new Student();
+		student.setEmail("jshields");
+		assertEquals("jshields", student.getEmail());
 	}
 	
 	@Test
 	public void testToString(){
-		Student s = new Student();
-		s.setStudentId("111111");
-		s.setFirstName("Jerrod");
-		s.setLastName("Shields");
-		s.setEmail("jshields");
-		assertEquals("[111111] Jerrod Shields jshields@jsu.edu", s.toString());
+		Student student = new Student();
+		student.setStudentId("111111");
+		student.setFirstName("Jerrod");
+		student.setLastName("Shields");
+		student.setEmail("jshields");
+		assertEquals("[111111] Jerrod Shields jshields@jsu.edu", student.toString());
 	}
 }

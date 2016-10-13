@@ -2,41 +2,36 @@ package edu.jsu.mcis;
 
 import java.io.*;
 import java.util.*;
+import au.com.bytecode.opencsv.*;
 
 public class DataSource{
 	
-	ArrayList<Student> sList;
-	ArrayList<Course> cList;
-	String line;
-	Scanner scanner;
-	int index;
+	ArrayList<Student> studentList;
+	ArrayList<Course> courseList;
 	Student student;
 	Course course;
 
 	
 	public DataSource() throws IOException{
-		sList = new ArrayList<>();
-		cList = new ArrayList<>();
-		line = null;
-		scanner = null;
-		index = 0;
-		parseCourse();
-		parseStudent();
+		studentList = new ArrayList<>();
+		courseList = new ArrayList<>();
+		parseCourses();
+		parseStudents();
 	}
 	
 	public ArrayList getStudentList(){
-		return sList;
+		return studentList;
 	}
 	
 	public ArrayList getCourseList(){
-		return cList;
+		return courseList;
 	}
 	
 	public Student getStudent(String studentId){
 		student = new Student(studentId);
-		for(int i = 0; i < sList.size()-1; i++){
-			if(studentId.equals(sList.get(i).getStudentId())){
-				student = sList.get(i);
+		for(int i = 0; i < studentList.size()-1; i++){
+			if(studentId.equals(studentList.get(i).getStudentId())){
+				student = studentList.get(i);
 			}
 		}
 		return student;
@@ -44,71 +39,49 @@ public class DataSource{
 	
 	public Course getCourse(String courseId){		
 		course = new Course(courseId);
-		for(int i = 0; i < cList.size()-1; i++){
-			if(courseId.equals(cList.get(i).getCourseId())){
-				course = cList.get(i);
+		for(int i = 0; i < courseList.size()-1; i++){
+			if(courseId.equals(courseList.get(i).getCourseId())){
+				course = courseList.get(i);
 			}
 		}
 		return course;
 	}
 	
-	private void parseCourse() throws IOException{
-		BufferedReader courseReader = new BufferedReader(new FileReader("src/test/resources/courses.csv"));	
-		
-		while ((line = courseReader.readLine()) != null) {
-			Course c = new Course();
-			scanner = new Scanner(line);
-			scanner.useDelimiter(",");
-			while (scanner.hasNext()) {
-				String data1 = scanner.next();
-				data1 = data1.replaceAll("\"", "");
-				if (index == 0){
-					c.setCourseId(data1);
-				}
-				else if (index == 1){
-					c.setSemester(data1);
-				}
-				else if (index == 2){
-					c.setYear(data1);
-				}
-				else if (index == 3){
-					c.setNumStudents(data1);
-				}
-				index++;
-			}
-			index = 0;
-			cList.add(c);
-		}
-		courseReader.close();
-	}
-	
-	private void parseStudent() throws IOException{
-		BufferedReader studentReader = new BufferedReader(new FileReader("src/test/resources/students.csv"));
-		
-		while ((line = studentReader.readLine()) != null) {
-			Student s = new Student();
-			scanner = new Scanner(line);
-			scanner.useDelimiter(",");
-			while (scanner.hasNext()) {
-				String data2 = scanner.next();
-				data2 = data2.replaceAll("\"", "");
-				if (index == 0){
-					s.setStudentId(data2);
-				}
-				else if (index == 1){
-					s.setFirstName(data2);
-				}
-				else if (index == 2){
-					s.setLastName(data2);
-				}
-				else if (index == 3){
-					s.setEmail(data2);
-				}
-				index++;
-			}
-			index = 0;
-			sList.add(s);
-		}
-		studentReader.close();
-	}
+    private void parseCourses() throws IOException{
+        CSVReader reader = new CSVReader(new FileReader("src/test/resources/courses.csv"));
+        String [] nextLine;
+        while((nextLine = reader.readNext()) != null){
+            if(nextLine[0].equals("ID")){
+                
+            }
+            else if(!nextLine[0].equals("ID")){
+                Course course = new Course();
+                course.setCourseId(nextLine[0]);
+                course.setSemester(nextLine[1]);
+                course.setYear(nextLine[2]);
+                course.setNumStudents(nextLine[3]);
+                courseList.add(course);
+            }
+        }
+        reader.close();
+    }
+    
+    private void parseStudents() throws IOException{
+        CSVReader reader = new CSVReader(new FileReader("src/test/resources/students.csv"));
+        String [] nextLine;
+        while((nextLine = reader.readNext()) != null){
+            if(nextLine[0].equals("ID")){
+                
+            }
+            else if(!nextLine[0].equals("ID")){
+                Student student = new Student();
+                student.setStudentId(nextLine[0]);
+                student.setFirstName(nextLine[1]);
+                student.setLastName(nextLine[2]);
+                student.setEmail(nextLine[3]);
+                studentList.add(student);
+            }
+        }
+        reader.close();
+    }
 }
