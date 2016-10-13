@@ -18,6 +18,14 @@ public class LeaderBoardTest {
 		LeaderBoard leaderBoard = new LeaderBoard("Course", "99000");
 		assertEquals("[99000] Spring 2013 (11 students)", leaderBoard.findCourseById("99000"));
 	}
+
+    @Test
+    public void testBadStudent()throws IOException{
+        LeaderBoard leaderBoard = new LeaderBoard("Student", "999999");
+        assertEquals("Invalid student data!", leaderBoard.findStudentById("999999"));
+    }
 }
+
+
 
 

@@ -56,6 +56,10 @@ public class Student{
 		this.email = mail;
 	}
 	
+    public String badStudent(){
+        return "Invalid student data!";
+    }
+    
 	@Override
 	public String toString(){
 		return "["+ getStudentId() +"] " + getFirstName() + " " + getLastName() + " " + getEmail() + "@jsu.edu";

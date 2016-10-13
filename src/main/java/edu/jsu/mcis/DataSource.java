@@ -33,6 +33,9 @@ public class DataSource{
 			if(studentId.equals(studentList.get(i).getStudentId())){
 				student = studentList.get(i);
 			}
+            else{
+                student = null;
+            }
 		}
 		return student;
 	}
@@ -43,6 +46,9 @@ public class DataSource{
 			if(courseId.equals(courseList.get(i).getCourseId())){
 				course = courseList.get(i);
 			}
+            else{
+                course = null;
+            }
 		}
 		return course;
 	}

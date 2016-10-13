@@ -56,6 +56,10 @@ public class Course{
 		this.numstudents = incomingNumStudents;
 	}
 	
+    public String badCourse(){
+        return "Invalid course data!";
+    }
+    
 	@Override
 	public String toString(){
 		return "["+ getCourseId() +"] "  + getSemester() + " " + getYear() +" (" +getNumStudents()+" students)";

@@ -30,17 +30,23 @@ public class LeaderBoard{
 	}
 	
 	public String findStudentById(String id){
-		student = new Student(id);		
+		//student = new Student(id);		
 		student = dataSource.getStudent(id);
-		
-		return student.toString();
+		if(student != null){
+            return student.toString();
+        }
+        else
+		    return student.badStudent();
 	}
 	
 	public String findCourseById(String id){
-		course = new Course(id);
+		//course = new Course(id);
 		course = dataSource.getCourse(id);
-		
-		return course.toString();
+		if(course != null){
+            return course.toString();
+        }
+        else
+            return course.badCourse();
 	}
 	
 	public static void main(String[] args)throws IOException{

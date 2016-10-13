@@ -29,7 +29,7 @@ public class DataSourceTest{
 		ArrayList courseList = dataSource.getCourseList();
 		assertEquals(25, courseList.size());
 	}
-	
+    
 	@Test
 	public void testGetStudentId()throws IOException{
 		assertEquals("111111", student.getStudentId());
