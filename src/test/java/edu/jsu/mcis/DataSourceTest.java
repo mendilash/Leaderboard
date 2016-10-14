@@ -18,16 +18,22 @@ public class DataSourceTest{
 		course = dataSource.getCourse("99000");
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testParseStudent(){
-		ArrayList studentList = dataSource.getStudentList();
+		ArrayList<Student> studentList = dataSource.getStudentList();
 		assertEquals(300, studentList.size());
+		assertEquals("111111", studentList.get(0).getStudentId());
+		assertEquals("111410", studentList.get(299).getStudentId());
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testParseCourse(){
-		ArrayList courseList = dataSource.getCourseList();
+		ArrayList<Course> courseList = dataSource.getCourseList();
 		assertEquals(25, courseList.size());
+		assertEquals("99000", courseList.get(0).getCourseId());
+		assertEquals("99024", courseList.get(24).getCourseId());
 	}
 	
 	@Test
@@ -68,5 +74,10 @@ public class DataSourceTest{
 	@Test
 	public void testGetCourseNumberOfStudents()throws IOException{
 		assertEquals("11", course.getNumStudents());
+	}
+	
+	//@Test
+	public void testGetAllStudentIds(){
+		ArrayList studentIds = dataSource.getStudentList();
 	}
 }
